@@ -12,7 +12,7 @@
           %th
             Name
           %th
-            Projekt-Zuweisung
+            Projektzuweisung
           %th{width: 100}
             Action
 
@@ -52,7 +52,6 @@
 
         = f.label :project
         = f.select :projects_id_eq, options_from_collection_for_select(Project.all, "id", "name", @search.projects_id_eq)
-
 
         %hr
 
