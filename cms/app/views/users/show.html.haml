@@ -3,15 +3,12 @@
     .span3
       = render 'menu'
 
-
     .span9
       %h1
         Benutzerkonto
 
       .row
         .span2
-
-
           %dl
             %dt
               Name
@@ -19,16 +16,13 @@
               = @user.name
               = @user.surname
 
-
             %dt
               E-Mail
             %dd
               = @user.email
 
         .span2
-
           %dl
-
             %dt
               Projekte
             %dd
@@ -37,11 +31,8 @@
                   %li
                     = link_to project.name.html_safe, project
 
-
         .span5
-
           %dl.dl-horizontal
-
             %dt
               Erstellt am
             %dd
@@ -52,9 +43,7 @@
             %dd
               = @user.sign_in_count
 
-
             %dt
               Letzter Login
             %dd
               = l @user.current_sign_in_at unless @user.current_sign_in_at.nil?
-
