@@ -1,13 +1,13 @@
 .container
   .row
     .span3
-      = render 'menu'  
+      = render 'menu'
 
-      
+
     .span6
       %h1
         Benutzer
-        
+
       %table.table.table-condensed.table-striped.table-bordered.table-hover
         %tr
           %th
@@ -16,7 +16,7 @@
             Projekt-Zuweisung
           %th{width: 100}
             Action
-      
+
         - @users.each do |user|
           %tr
             %td= link_to user.username, user
@@ -24,15 +24,15 @@
               - user.projects.each do |project|
                 = link_to project.name.html_safe, project
                 %br
-                
-              
-            
+
+
+
             %td
               .btn-group
                 = link_to edit_user_path(user), :class => 'btn btn-mini btn-success' do
                   %i.fa.fa-edit
                   Bearbeiten
-                
+
                 = link_to user_path(user), :method => :delete, :title => t('confirmation.delete.title'), :data => { :confirm => t('confirmation.delete.user') }, :class => 'btn btn-mini btn-danger' do
                   %i.fa.fa-trash-o
                   Löschen
@@ -48,17 +48,17 @@
 
         %br
         %br
-        
+
         = f.label :email_cont
         = f.text_field :email_cont
 
         %br
         %br
-        
+
         = f.label :project
-        = f.select :projects_id_eq, options_from_collection_for_select(Project.all, "id", "name", @search.projects_id_eq) 
+        = f.select :projects_id_eq, options_from_collection_for_select(Project.all, "id", "name", @search.projects_id_eq)
 
 
         %hr
-        
+
         = f.submit 'Filtern', :class => 'btn'
