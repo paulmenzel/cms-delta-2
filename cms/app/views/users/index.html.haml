@@ -3,7 +3,6 @@
     .span3
       = render 'menu'
 
-
     .span6
       %h1
         Benutzer
@@ -25,8 +24,6 @@
                 = link_to project.name.html_safe, project
                 %br
 
-
-
             %td
               .btn-group
                 = link_to edit_user_path(user), :class => 'btn btn-mini btn-success' do
@@ -39,8 +36,6 @@
 
     .span3
       %h1 Filter
-
-
 
       = search_form_for @search do |f|
         = f.label :name_or_surname_cont
